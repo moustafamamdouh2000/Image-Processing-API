@@ -15,6 +15,7 @@ nodejs is required and can be downloaded from the following link https://nodejs.
 
 run `npm install` in the root folder to download all the required dependencies to start the application
 
+make sure yarn is installed as well by typing the following commad `npm install --global yarn`
 ## API References
 - the base URL for this app is the `localhost:5000` or `http://127.0.0.1:5000` you can change the port number in the code to your desire in the src/index.ts file
 ## Status Codes
