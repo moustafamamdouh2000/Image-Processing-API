@@ -7,7 +7,7 @@ router.use('/api', images)
 
 router.get('/', (_req: Request, res: Response) => {
   const imageDir = readImageDirContent()
-  let message: string;
+  let message = ''
   imageDir.forEach((elemnt) => {
     if (elemnt == 'Resized') return
     message = message.concat(elemnt.concat('<br>')).replace('.jpg', '')

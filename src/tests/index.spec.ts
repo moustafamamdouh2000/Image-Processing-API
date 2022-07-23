@@ -7,7 +7,7 @@ const request = supertest(app)
 
 describe('Test endpoint response', () => {
   const validFile = 'santamonica'
-  const invalidFile  = 'santamonica123'
+  const invalidFile = 'santamonica123'
   const width = 200
   const height = 200
   const invalidWidth = 2000
