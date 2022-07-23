@@ -33,6 +33,6 @@ these are the end points you can access by writing the end point after the local
 ## Scripts can be used
 - `npm start` to build and run the project
 - `npm run test` to run the written test with jasmine and check the cases
-- `npx run prettier --write ./src` to format the project .ts files in the src folder according to the .prettierrc settings inputed there
+- `npm run prettier ` to format the project .ts files in the src folder according to the .prettierrc settings inputed there
 - `npm run lint` to run lint and check for errors
-- `npm build` to build the .ts files and generate the .js files
+- `npm run Build` to build the .ts files and generate the .js files in the build folder
