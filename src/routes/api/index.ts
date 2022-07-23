@@ -12,14 +12,14 @@ import {
 const images: Router = express.Router()
 
 images.get('/', async (req: Request, res: Response): Promise<void> => {
-  const {filename, width, height} = req.query
+  const { filename, width, height } = req.query
   const fileName: string = filename as string
   const Width: number = parseInt(width as string)
   const Height: number = parseInt(height as string)
   creatDir()
   if (fileName && !Width && !Height) {
     if (checkImageExist(fileName)) {
-      console.log("test");
+      console.log('test')
       res.status(200).sendFile(viewCachedImage(fileName))
     } else {
       res.status(400).send('image not found')
@@ -29,19 +29,18 @@ images.get('/', async (req: Request, res: Response): Promise<void> => {
   } else if (fileName) {
     if (checkImageExist(fileName)) {
       if (!checkCache(fileName, Width, Height)) {
-        if(checkWidth(Width) && checkHeight(Height)){
+        if (checkWidth(Width) && checkHeight(Height)) {
           res
-          .status(200)
-          .sendFile(
-            await resizer(
-              `../../../Images/${fileName}.jpg`,
-              Width,
-              Height,
-              `../../../Images/Resized/${fileName}_${Width}_${Height}.jpg`
+            .status(200)
+            .sendFile(
+              await resizer(
+                `../../../Images/${fileName}.jpg`,
+                Width,
+                Height,
+                `../../../Images/Resized/${fileName}_${Width}_${Height}.jpg`
+              )
             )
-          )
-          }
-        else{
+        } else {
           res.status(400).send('bad values for Width and Height')
         }
       } else {

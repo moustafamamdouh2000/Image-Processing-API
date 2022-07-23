@@ -2,7 +2,7 @@ import fs from 'fs'
 import sharp from 'sharp'
 import path from 'path'
 
-const files:string[] = fs.readdirSync(path.resolve(__dirname + '../../../Images'))
+const files: string[] = fs.readdirSync(path.resolve(__dirname + '../../../Images'))
 export const checkPathexist = (path: string): boolean => {
   return fs.existsSync(path)
 }
@@ -29,26 +29,20 @@ export const resolveNewImage = (fileName: string): string => {
 }
 
 export const returnCachedImage = (fileName: string, width: number, height: number) => {
-  return path.resolve(
-    __dirname + '../../../Images/Resized/' + `${fileName}_${width}_${height}.jpg`
-  )
+  return path.resolve(__dirname + '../../../Images/Resized/' + `${fileName}_${width}_${height}.jpg`)
 }
 
-export const checkWidth = (width:number) : boolean => {
-    if( width <1280 && width >0)
-        return true
-    else
-        return false
+export const checkWidth = (width: number): boolean => {
+  if (width < 1280 && width > 0) return true
+  else return false
 }
-export const checkHeight = (height:number) : boolean  => {
-    if( height <1280 && height >0)
-        return true
-    else
-        return false
+export const checkHeight = (height: number): boolean => {
+  if (height < 1280 && height > 0) return true
+  else return false
 }
 export const creatDir = () => {
-  const dir: string = path.resolve(__dirname+'../../../Images/Resized/')
-  if(!fs.existsSync(dir)){
+  const dir: string = path.resolve(__dirname + '../../../Images/Resized/')
+  if (!fs.existsSync(dir)) {
     fs.mkdirSync(dir)
   }
 }
