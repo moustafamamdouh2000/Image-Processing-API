@@ -6,6 +6,7 @@
   "scripts": {
     "test": "npx tsc && jasmine",
     "build": "yarn clean && npx tsc",
+    "clean": "rimraf build/",
     "start": "npm run build && nodemon build/index.js",
     "format": "prettier --write src/**/*.ts",
     "lint": "eslint . --ext .ts"
